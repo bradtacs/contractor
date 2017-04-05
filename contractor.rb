@@ -44,14 +44,15 @@ class Contact
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
   def update(attribute, new_value)
+    @new_value=new_value
    if attribute == "first_name"
-     self.first_name = new_value
+     self.first_name = @new_value
    elsif attribute == "last_name"
-     self.last_name = new_value
+     self.last_name = @new_value
    elsif attribute == "email"
-     self.email = new_value
+     self.email = @new_value
    elsif attribute == "note"
-     self.note = new_value
+     self.note   = @new_value
    end
 
   end
@@ -93,7 +94,7 @@ class Contact
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    @@contacts.delete.self
+    @@contacts.delete(self)
     return true
   end
 
@@ -102,10 +103,10 @@ class Contact
 
 end
 
-#contact = Contact.new('Betty', 'Maker', 'bettymakes@gmail.com', 'Loves Pokemon')
+contact = Contact.new('Betty', 'Maker', 'bettymakes@gmail.com', 'Loves Pokemon')
 
 #puts contact.first_name
 
-#contact2 = Contact.new('Betty', 'Maker', 'bettymakes@gmail.com', 'Loves Pokemon')
+contact2 = Contact.new('Betty', 'Maker', 'bettymakes@gmail.com', 'Loves Pokemon')
 
 # puts contact2.first_name
