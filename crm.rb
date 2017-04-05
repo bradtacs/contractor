@@ -53,20 +53,23 @@ class CRM
 
 
   def modify_existing_contact
-    print '0) Enter the contact to update: '
-    contact = gets.chomp!
+    print '0) Enter id of contact to update: '
+    id = gets.to_i
     print '1) Enter attribute to update: '
-    attribute = gets.chomp!
+    attribute = gets.chomp
     print '2) Enter the new value to be updated to: '
-    new_value = gets.chomp!
-
+    new_value = gets.chomp
+    puts attribute
+    puts new_value
+    contact = Contact.find(id)
     contact.update(attribute, new_value)
   end
 
   def delete_contact
-    print 'Enter the contact to be delete: '
-    contact = gets.chomp
-    Contact.delete(delete_input)
+    print 'Enter the contact Id to be delete: '
+    id= gets.to_i
+    contact = Contact.find(id)
+    contact.delete()
   end
 
   def display_all_contacts
