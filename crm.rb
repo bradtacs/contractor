@@ -25,24 +25,17 @@ class CRM
   end
 
   def call_option(user_selected)
-    case user_selected
-    when 1 then add_new_contact
-    when 2 then modify_existing_contact
-    # Finish off the rest for 3 through 6
-    # To be clear, the methods add_new_contact and modify_existing_contact
-    # haven't been implemented yet
+      case user_selected
+      when 1 then add_new_contact
+      when 2 then modify_existing_contact
+      when 3 then delete_contact
+      when 4 then display_all_contacts
+      when 5 then search_by_attribute
+      when 6 then exit
     end
   end
 
-  def call_option(user_selected)
-    case user_selected
-    when 1 then add_new_contact
-    when 2 then modify_existing_contact
-    # Finish off the rest for 3 through 6
-    # To be clear, the methods add_new_contact and modify_existing_contact
-    # haven't been implemented yet
-    end
-  end
+
 
   def modify_existing_contact
 
@@ -51,7 +44,6 @@ class CRM
   def delete_contact
     puts "What contact do?"
     contact = gets.chomp
-
 
   end
 

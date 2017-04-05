@@ -27,7 +27,7 @@ class Contact
 
   # This method should return all of the existing contacts
   def self.all
-    return @@Contact
+    return @@contacts
   end
 
   # This method should accept an id as an argument
