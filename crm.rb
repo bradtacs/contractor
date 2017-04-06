@@ -59,8 +59,7 @@ class CRM
     attribute = gets.chomp
     print '2) Enter the new value to be updated to: '
     new_value = gets.chomp
-    puts attribute
-    puts new_value
+
     contact = Contact.find(id)
     contact.update(attribute, new_value)
   end
